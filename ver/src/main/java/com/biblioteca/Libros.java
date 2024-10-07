@@ -66,7 +66,7 @@ public class Libros {
         this.disponible = disponible;
     } 
 
-    public static void prestar() {
+    public void prestar() {
         if(cantidadDisponible > 0) {
             cantidadDisponible--;
             if (cantidadDisponible == 0) {
@@ -79,7 +79,7 @@ public class Libros {
 
     }
 
-    public static void devolver() {
+    public void devolver() {
         cantidadDisponible++;
         if(cantidadDisponible > 0) {
             disponible = true; 
@@ -87,7 +87,7 @@ public class Libros {
         System.out.println("Libro devuelto: " + titulo);
     }
 
-    public static void mostrarInfo() {
+    public void mostrarInfo() {
         System.out.println("Titulo: " + titulo);
         System.out.println("Autor: " + autor);
         System.out.println("Genero: " + genero);
