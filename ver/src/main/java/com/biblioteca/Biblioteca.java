@@ -3,11 +3,11 @@ package com.biblioteca;
 import java.util.ArrayList;
 
 public class Biblioteca {
-    private String nombre;
+    private String miBiblioteca;
     private ArrayList<Libro> libros;
 
     public Biblioteca(String nombre) {
-        this.nombre = nombre;
+        this.miBiblioteca = nombre;
         this.libros = new ArrayList<>();
     }
 
