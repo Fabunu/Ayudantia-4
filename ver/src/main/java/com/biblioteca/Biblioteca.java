@@ -56,30 +56,42 @@ public class Biblioteca {
     }
 
     public void eliminarLibro(String titulo) {
-        Libro libro = buscarLibroPorTitulo(titulo);
-        if (libro != null && libro.getCantidadDisponible() == 0) {
-            libros.remove(libro);
-            System.out.println("El libro ha sido eliminado");
-        } else {
-            System.out.println("No se puede eliminar el libro porque hay copias disponibles");
+        try {
+            Libro libro = buscarLibroPorTitulo(titulo);
+            if (libro != null && libro.getCantidadDisponible() == 0) {
+                libros.remove(libro);
+                System.out.println("El libro ha sido eliminado");
+            } else {
+                System.out.println("No se puede eliminar el libro porque hay copias disponibles");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al eliminar el libro: " + e.getMessage());
         }
     }
 
     public void prestarLibro(String titulo) {
-        Libro libro = buscarLibroPorTitulo(titulo);
-        if (libro != null) {
-            libro.prestar();
-        } else {
-            System.out.println("El libro no esta disponible");
+        try {
+            Libro libro = buscarLibroPorTitulo(titulo);
+            if (libro != null) {
+                libro.prestar();
+            } else {
+                System.out.println("El libro no esta disponible");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al prestar el libro: " + e.getMessage());
         }
     }
 
     public void devolverLibro(String titulo) {
-        Libro libro = buscarLibroPorTitulo(titulo);
-        if (libro != null) {
-            libro.devolver();
-        } else {
-            System.out.println("No se encontro el libro para devolver");
+        try {
+            Libro libro = buscarLibroPorTitulo(titulo);
+            if (libro != null) {
+                libro.devolver();
+            } else {
+                System.out.println("No se encontro el libro para devolver");
+            }
+        } catch (Exception e) {
+            System.out.println("Error al devolver el libro: " + e.getMessage());
         }
     }
 }
